@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua função</title>
+    <link rel="stylesheet" href="../style/Operadores.css">
+    <script src="../js/scriptOperadores.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="esquerda">
+            <div id="imagem-operador" class="imagem"></div>
+            <div id="imagem-inteligencia" class="imagem" style="display: none;"></div>
+        </div>
+    
+        <div class="direita">
+            <div id="detalhes-operador">
+                <div class="titulo">
+                    <h1>Operador</h1>
+                </div>
+                <div class="detalhe">
+                    <p>Objetivo principal: desarmar a bomba física e ouvir orientações de Inteligência</p>
+                </div>
+            </div>
+            
+            <div id="detalhes-inteligencia" style="display: none;">
+                <div class="titulo">
+                    <h1>Inteligência</h1>
+                </div>
+                <div class="detalhe">
+                    <p>Objetivo principal: fornecer informações críticas para auxiliar no desarme da bomba.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="subBarra">
+            <div id="btn-inteligencia" class="Inteligencia" onclick="mostrarInteligencia()">Inteligência</div>
+            <div id="btn-operador" class="Operador" onclick="mostrarOperador()">Operador</div>
+            <div class="começar" onclick="location.href='index.html'">Começar</div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

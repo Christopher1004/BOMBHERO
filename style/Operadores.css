@@ -1,0 +1,111 @@
+body {
+    background-color: black;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Aron';
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    width: 90%;
+    max-width: 1200px;
+    height: 85%;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+
+.esquerda {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid white;
+    padding: 20px;
+}
+
+.imagem {
+    background-image: url('/caminho/para/sua/imagem.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.direita {
+    padding: 20px;
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo h1 {
+    font-size: 24px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.detalhe p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.subBarra {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border-top: 1px solid white;
+    background-color: #1f1f1f;
+}
+
+/* Estilo para os botões */
+.Operador, .Inteligencia, .começar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo padrão para os botões (estado inicial) */
+.Operador {
+    background-color: white;
+    color: black;
+}
+
+.Inteligencia {
+    background-color: black;
+    color: white;
+}
+
+/* Estilo para o botão de começar */
+.começar {
+    background-color: #31dd95;
+    color: black;
+    position: relative;
+}
+
+.começar::after {
+    content: ">";
+    position: absolute;
+    right: 20px;
+    font-size: 24px;
+    line-height: 16px;
+}
+

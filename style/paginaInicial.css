@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    margin: 0;
+    height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'aron';
+}
+
+.container {
+    text-align: center;
+}
+
+.Logo img {
+    height: auto; /* Ajuste automático da altura */
+    width: 50%; /* Aumente a largura para 25% */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+.Logo {
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px; /* Ajustei o padding para mais espaço */
+}
+
+.começar {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: 'Aron';
+    font-size: 20px;
+    padding: 1px 30px; /* Padding ajustado para mais simetria */
+    cursor: pointer;
+    border: 1px solid black; /* Adicionado borda preta */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: space-between; /* Adiciona espaço entre o texto e a seta */
+}
+
+.começar::after {
+    content: ">";
+    margin-left: 100px;
+}
