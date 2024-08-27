@@ -155,10 +155,11 @@ body {
     width: 90%;
     margin: auto;
     text-align: center;
-}
+    }
 
 .key:hover {
     background-color: rgb(26, 26, 26);
+    cursor: pointer;
 }
 
 .fioVermelho {
