@@ -1,0 +1,153 @@
+body {
+    background-color: black;
+}
+
+.bomb {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 0 auto; 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 125px 125px 125px 25px 125px 125px 125px 125px;
+    grid-template-rows: 110px 110px 110px 110px 110px;
+    padding: 20px;
+    border-radius: 2%;
+    background-color: orangered;
+    box-shadow: inset -25px -25px 2px rgb(172, 46, 0);
+}
+
+@font-face {
+    font-family: Digital-font;
+    src: url(font/ds_digital/DS-DIGI.TTF);
+}
+
+.Esquerda {
+    grid-row-start: 1;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(62, 62, 62);
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    padding: 10px;
+    border-radius: 2%;
+    background-color: rgb(32, 32, 32);
+    box-shadow: 10px 5px 50px black;
+}
+
+.Direita {
+    grid-row-start: 3;
+    grid-row-end: 1;
+    grid-column-end: 5;
+    grid-column-start: 9;
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(34, 34, 34);
+    border-color: rgb(41, 41, 41);
+    padding: 15px;
+    position: relative;
+    border-radius: 2%;
+    box-shadow: inset -5px -5px 0px rgb(12, 12, 12);
+}
+
+.relogio {
+    display: flex; /* Adiciona display flex */
+    justify-content: center; /* Alinha horizontalmente */
+    align-items: center; /* Alinha verticalmente */
+    text-align: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
+}
+
+#Timer {
+    font-size: 200px;
+    font-family: Digital-font;
+    color: white;
+    text-shadow: 0px 0px 10px white;
+}
+
+.cima {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-end: 1;
+    grid-column-start: 2; 
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(33, 33, 33);
+    display: flex; /* Adiciona display flex */
+    flex-direction: row; /* Alinha horizontalmente */
+    justify-content: space-between; /* Distribui os 'digitos' igualmente */
+    padding-top: 20%;
+    padding-inline: 35px;
+    background-color: rgb(48, 48, 48);
+}
+
+.baixo {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-end: 1;
+        grid-column-start: 2; 
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(34, 34, 34);
+        padding: 20px;
+        background-color: rgb(48, 48, 48)
+}
+
+.digito {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    margin: 10px; /* Adiciona margem para separar os 'digitos' */
+    color: #fff;
+    box-shadow:
+      0 0 7px #ff4545,
+      0 0 10px rgb(255, 0, 0),
+      0 0 21px rgb(255, 0, 0),
+      0 0 42px rgb(255, 0, 0),
+      0 0 82px rgb(255, 0, 0),
+      0 0 92px rgb(255, 0, 0),
+      0 0 102px rgb(255, 0, 0),
+      0 0 151px rgb(255, 0, 0);
+}
+
+.key {
+    font-family: 'Courier New', Courier, monospace;
+    height: 80px;
+    width: 85px;
+    background-color: rgb(18, 18, 18);
+    color: #f0f0f0;
+    border-radius: 10px;
+    font-size: 40px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    margin-inline: 1px;
+    display: inline-grid;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 5px 1px black,
+    10px 5px 5px rgba(8, 8, 8, 0.2),
+    10px 5px 5px rgba(8, 8, 8, 0.2);
+}
+
+.teclas {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.key:hover {
+    background-color: rgb(26, 26, 26);
+}
