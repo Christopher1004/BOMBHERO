@@ -1,7 +1,6 @@
 body {
     background-color: black;
 }
-
 .bomb {
     border-width: 2px;
     border-style: solid;
@@ -108,7 +107,42 @@ body {
         border-color: rgb(249, 249, 249);
         padding: 10px;
 }
-
+.DigitoVerde{
+    background-color: green;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    margin: 10px; /* Adiciona margem para separar os 'digitos' */
+    color: #fff;
+    box-shadow:
+      0 0 7px #00ff48,
+      0 0 10px #00ff48,
+      0 0 21px #00ff48,
+      0 0 42px rgb(255, 0, 0),
+      0 0 82px rgb(255, 0, 0),
+      0 0 92px rgb(255, 0, 0),
+      0 0 102px rgb(255, 0, 0),
+      0 0 151px rgb(255, 0, 0);
+}
+#digito1{
+    background-color: red;
+    border-radius: 100%;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    margin: 10px; /* Adiciona margem para separar os 'digitos' */
+    color: #fff;
+    box-shadow:
+      0 0 7px #ff4545,
+      0 0 10px rgb(255, 0, 0),
+      0 0 21px rgb(255, 0, 0),
+      0 0 42px rgb(255, 0, 0),
+      0 0 82px rgb(255, 0, 0),
+      0 0 92px rgb(255, 0, 0),
+      0 0 102px rgb(255, 0, 0),
+      0 0 151px rgb(255, 0, 0);
+}
 .digito {
     width: 20px;
     height: 20px;
@@ -285,3 +319,4 @@ body {
       .toolbar .button:hover {
         background-color: rgba(49, 221, 149, 1); /* added a hover effect */
       }
+      
