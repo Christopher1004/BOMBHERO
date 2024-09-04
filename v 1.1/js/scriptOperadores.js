@@ -29,3 +29,5 @@ function mostrarOperador() {
     document.getElementById('btn-inteligencia').style.backgroundColor = 'black';
     document.getElementById('btn-inteligencia').style.color = 'white';
 }
+
+
