@@ -21,15 +21,18 @@ function startTimer(duration, display) {
                 window.location = "falha.html";
             }
         }
-        if(display.textContent <= "01:00"){
-                document.querySelector("#Timer").classList.add('Erro2');
+        if (display.textContent <= "01:00") {
+            document.querySelector("#Timer").classList.add('Erro2');
+        }
+        if (display.textContent <= "00:15") {
+            document.querySelector(".gameArea").classList.add('Tremedeira');
         }
         currentTimer = timer; // Atualiza o valor global do timer
     }, 1000);
 }
 // função para piscar o timer quando errar
-function TimerVermelho(){
-    setInterval(function (){
+function TimerVermelho() {
+    setInterval(function () {
         document.querySelector("#Timer").classList.add('Erro');
     }, 200);
     document.querySelector("#Timer").classList.remove('Erro');
@@ -57,6 +60,19 @@ function atualizarDigitos() {
         }
     });
 }
+function limparNumerosSelecionados(set) {
+    set.clear(); // Remove todos os elementos do Set
+
+    const digitos = document.querySelectorAll('.digito');
+    digitos.forEach((digito) => {
+        digito.classList.remove('active');
+    });
+
+
+}
+document.getElementById('apagar').addEventListener('click', function () {
+    limparNumerosSelecionados(numerosSelecionados);
+})
 document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('click', function () {
         const numero = this.textContent;
@@ -73,37 +89,34 @@ document.querySelectorAll('.key').forEach(key => {
                 this.classList.add('selected');
             }
         }
-
         // Atualiza a senha se tivermos 4 números distintos
         if (numerosSelecionados.size === maxSelecionados) {
             const senha = Array.from(numerosSelecionados).join('');
-          //  document.getElementById('senha').textContent = senha;
+            //  document.getElementById('senha').textContent = senha;
 
             atualizarDigitos();
 
             // Verifica se a senha gerada é igual à senha correta
             if (senha === senhaCorreta) {
                 alert('Senha correta! Acesso concedido.');
-                // Adicione qualquer ação adicional aqui, se necessário
             } else {
+
                 subtractOneMinute(); // Chama a função para subtrair 1 minuto
-                numerosSelecionados.clear();
                 document.querySelectorAll('.key').forEach(k => k.classList.remove('selected'));
                 TimerVermelho();
+                limparNumerosSelecionados(numerosSelecionados);
+                console.log(numerosSelecionados);
             }
-            // Limpa a seleção após a verificação
-            numerosSelecionados.clear();
-            document.querySelectorAll('.key').forEach(k => k.classList.remove('selected'));
-           // document.getElementById('senha').textContent = ' ';
+
         } else {
-          //  document.getElementById('senha').textContent = `${Array.from(numerosSelecionados).join(', ')}`;
+            //  document.getElementById('senha').textContent = `${Array.from(numerosSelecionados).join(', ')}`;
             atualizarDigitos();
         }
     });
 });
 
 // Inicializa o cronômetro 
-  window.onload = function () {
+ window.onload = function () {
     const tenMinutes = 60 * 5;
     const display = document.querySelector('#Timer');
     startTimer(tenMinutes, display);

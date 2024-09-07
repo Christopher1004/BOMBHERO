@@ -29,7 +29,33 @@ body {
     height: calc(110px * 5 + 20px);
     padding: 40px;
 }
+.gameArea.Tremedeira{
+    animation: Tremedeira 0.1s infinite;
+}
+@keyframes Tremedeira {
+    0%{
+        left: 50.1%;
+        top: 49.9;
+    }
+    25%{
+        margin-right: -5px;
+    }
 
+    50%{
+        left: 49.9%;
+        top: 50.1%;
+        
+    }
+    75%{
+        margin-right: 5px;
+    }
+
+    100%{
+        left: 50%;
+        top: 50%;
+        margin-right: 0px;
+    }
+}
 @font-face {
     font-family: Digital-font;
     src: url(../font/ds_digital/DS-DIGI.TTF);
@@ -137,7 +163,6 @@ body {
     border-color: rgb(249, 249, 249);
     padding: 10px;
 }
-
 .digito {
     width: 25px;
     height: 25px;
@@ -148,7 +173,6 @@ body {
     align-items: center;
     margin: 10px;
     /* Adiciona margem para separar os 'digitos' */
-
     color: #fff;
     box-shadow:
         0 0 7px #ff4545,
@@ -159,8 +183,8 @@ body {
         0 0 92px rgb(255, 0, 0),
         0 0 102px rgb(255, 0, 0),
         0 0 151px rgb(255, 0, 0);
+    
 }
-
 .digito.active {
     background-color: rgb(144, 255, 144);
     color: white;
@@ -173,7 +197,6 @@ body {
         0 0 92px rgb(2, 255, 2),
         0 0 102px rgb(2, 255, 2),
         0 0 151px rgb(2, 255, 2);
-
 }
 
 .key {
@@ -196,7 +219,31 @@ body {
         10px 5px 5px rgba(8, 8, 8, 0.2),
         10px 5px 5px rgba(8, 8, 8, 0.2);
 }
-
+.apagar{
+    font-family: 'Courier New', Courier, monospace;
+    height: 80px;
+    width: 85px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(249, 249, 249);
+    color: #f0f0f0;
+    border-radius: 10px;
+    font-size: 40px;
+    margin-bottom: 1px;
+    margin-top: 5px;
+    margin-inline: 1px;
+    display: inline-grid;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 5px 1px black,
+        10px 5px 5px rgba(8, 8, 8, 0.2),
+        10px 5px 5px rgba(8, 8, 8, 0.2);
+    background-color: rgba(30, 30, 30, 1);
+}
+.apagar:hover{
+    background-color: rgb(26, 26, 26);
+    cursor: pointer;
+}
 .teclas {
     width: 90%;
     margin: auto;
