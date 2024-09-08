@@ -99,6 +99,7 @@ document.querySelectorAll('.key').forEach(key => {
             // Verifica se a senha gerada é igual à senha correta
             if (senha === senhaCorreta) {
                 alert('Senha correta! Acesso concedido.');
+                $('.tampa').hide();
             } else {
 
                 subtractOneMinute(); // Chama a função para subtrair 1 minuto

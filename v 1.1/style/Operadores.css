@@ -10,6 +10,25 @@ body {
     font-family: 'Aron';
 }
 
+#imagem-operador {
+    background-image: url('../img/agents/image.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+
+  #imagem-inteligencia {
+    background-image: url('../img/agents/image-1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
