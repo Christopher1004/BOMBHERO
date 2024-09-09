@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'aron';
+}
+
+@font-face {
+    font-family: aron;
+    src: url(../font/aron/Aron-Regular-BF6556dd3e538a2.ttf);
+}
+
+h1 {
+    font-size: 45px;
+}
+
+.nomeEquipe {
+    font-size: 30px;
+    background-color: black;
+    border: 1px solid #FFF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#comeca {
+    text-align: end;
+    padding: 15px 50px;
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: #31dd95;
+    color: #FFF;
+    font-family: aron;
+    border: none;
+}
