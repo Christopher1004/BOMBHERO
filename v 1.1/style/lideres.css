@@ -10,6 +10,11 @@ body {
     font-family: 'aron';
 }
 
+@font-face {
+    font-family: aron;
+    src: url(../font/aron/Aron-Regular-BF6556dd3e538a2.ttf);
+}
+
 .container {
     width: 80%;
     max-width: 800px;

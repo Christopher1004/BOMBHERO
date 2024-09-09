@@ -10,6 +10,11 @@ body {
     font-family: 'Aron';
 }
 
+@font-face {
+    font-family: aron;
+    src: url(../font/aron/Aron-Regular-BF6556dd3e538a2.ttf);
+}
+
 #imagem-operador {
     background-image: url('../img/agents/image.webp');
     background-size: cover;
