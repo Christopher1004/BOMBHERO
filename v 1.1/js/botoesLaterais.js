@@ -1,16 +1,12 @@
-
-$(document).ready(function botaoSair() {
+$(document).ready(function () {
+    // Função para o botão de sair
     var sairButton = document.getElementById('sair');
-
     sairButton.addEventListener('click', function () {
-        window.location.href = '../pages/paginaInicial.html'
+        window.location.href = '../pages/paginaInicial.html';
     });
 
-
-});
-
-$(document).ready(function botaoTesoura() {
-    var cortarFio = false; // Variável que indica se o jogador quer cortar um fio
+    // Variável que indica se o jogador quer cortar um fio
+    var cortarFio = false;
 
     // Quando o botão da tesoura é clicado
     $('#tesoura').click(function () {
@@ -18,7 +14,7 @@ $(document).ready(function botaoTesoura() {
         console.log('Tesoura ativada! Clique em um fio para cortar.');
     });
 
-    // Evento de clique para cada fio (usando IDs únicos)
+    // Evento de clique para cada fio (IDs únicos)
     $('#fioAzul, #fioVermelho, #fioAmarelo').click(function () {
         if (cortarFio) {
             $(this).hide(); // Esconde o fio clicado
@@ -27,8 +23,5 @@ $(document).ready(function botaoTesoura() {
         } else {
             console.log('Tesoura não ativada!');
         }
-
     });
 });
-
-
