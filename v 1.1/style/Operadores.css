@@ -125,6 +125,10 @@ body {
     position: relative;
 }
 
+.começar:hover{
+    background-color: #28a45c;
+}
+
 .começar::after {
     content: ">";
     position: absolute;
