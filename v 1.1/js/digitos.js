@@ -75,8 +75,9 @@ function AbrirTampa(){
         $('.tampa').hide();
     }, 3000);
 }
+
 function FioAzul(){
-    currentTimer += 60;
+    currentTimer += 120;
     
     // Atualiza o display com o novo valor
     const minutes = parseInt(currentTimer / 60, 10);
@@ -88,7 +89,22 @@ function FioAzul(){
     clearInterval(timerInterval);
     startTimer(currentTimer, display); 
 }
+var cortarFio = false;
 
+    // Quando o botão da tesoura é clicado
+    $('#tesoura').click(function () {
+        cortarFio = true; // Ativa o estado de cortar fio
+        console.log('Tesoura ativada! Clique em um fio para cortar.');
+    });
+
+    $('#fioAzul').click(function () {
+        if (cortarFio) {
+            $(this).hide(); // Esconde o fio clicado
+            FioAzul();
+            cortarFio = false; // Reseta o estado após cortar um fio
+            
+        } 
+    });
 document.getElementById('apagar').addEventListener('click', function () {
     limparNumerosSelecionados(numerosSelecionados);
 })
