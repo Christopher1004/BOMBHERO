@@ -67,9 +67,28 @@ function limparNumerosSelecionados(set) {
     digitos.forEach((digito) => {
         digito.classList.remove('active');
     });
-
-
 }
+function AbrirTampa(){
+    const tampa = document.querySelector('.tampa');
+    tampa.classList.add('mexer');
+    setInterval(function () {
+        $('.tampa').hide();
+    }, 3000);
+}
+function FioAzul(){
+    currentTimer += 60;
+    
+    // Atualiza o display com o novo valor
+    const minutes = parseInt(currentTimer / 60, 10);
+    const seconds = parseInt(currentTimer % 60, 10);
+    const display = document.querySelector('#Timer');
+    display.textContent = (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+    
+    // Reinicia o intervalo do timer com o novo tempo
+    clearInterval(timerInterval);
+    startTimer(currentTimer, display); 
+}
+
 document.getElementById('apagar').addEventListener('click', function () {
     limparNumerosSelecionados(numerosSelecionados);
 })
@@ -80,9 +99,10 @@ document.querySelectorAll('.key').forEach(key => {
         // Verifica se o número já foi selecionado
         if (numerosSelecionados.has(numero)) {
             // Se o número já foi selecionado, remove a seleção
-            numerosSelecionados.delete(numero);
+         //   numerosSelecionados.delete(numero);
             this.classList.remove('selected');
-        } else {
+        } 
+        else {
             // Se o número não foi selecionado, adiciona à seleção
             if (numerosSelecionados.size < maxSelecionados) {
                 numerosSelecionados.add(numero);
@@ -99,7 +119,8 @@ document.querySelectorAll('.key').forEach(key => {
             // Verifica se a senha gerada é igual à senha correta
             if (senha === senhaCorreta) {
                 alert('Senha correta! Acesso concedido.');
-                $('.tampa').hide();
+                AbrirTampa();
+             //   
             } else {
 
                 subtractOneMinute(); // Chama a função para subtrair 1 minuto
