@@ -1,0 +1,48 @@
+/* hide the HTML layout */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff; /* set background color to white */
+  }
+  
+  /* hide the title and other HTML elements */
+  head, title, meta, link {
+    display: none;
+  }
+  
+  /* make the object element take up the full screen */
+  object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: none;
+  }
+  
+  /* hide the fallback message */
+  object p {
+    display: none;
+  }
+
+  /* adicione um efeito de sombra ao PDF */
+object {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* crie um elemento para a lanterna */
+  .lanterna {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
+  
+  /* esconda a lanterna por padrão */
+  .lanterna {
+    opacity: 0;
+  }

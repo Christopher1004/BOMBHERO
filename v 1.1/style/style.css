@@ -483,6 +483,7 @@ html {
     background-color: rgba(30, 30, 30, 1);
     border-radius: 5%;
     padding: 3px;
+    height: 266px;
     box-shadow: 10px 5px 50px black inset;
     overflow: hidden; 
     cursor: alias;

@@ -2,7 +2,8 @@ let currentTimer = 0; // Variável global para armazenar o valor do timer
 let timerInterval; // Variável para armazenar o identificador do intervalo
 let numerosSelecionados = new Set(); // Para armazenar números distintos
 const maxSelecionados = 4; // Número máximo de números distintos permitidos
-const senhaCorreta = '1234'; // Senha correta
+const senhaCorreta = '5623'; // Senha correta
+window.senhaVerificada = false;
 
 function startTimer(duration, display) {
     currentTimer = duration; // Inicializa a variável global
@@ -89,6 +90,41 @@ function FioAzul(){
     clearInterval(timerInterval);
     startTimer(currentTimer, display); 
 }
+function FioVermelho() {
+    window.location.href = 'cutsceneFalha.html'; // Redireciona para a página de falha
+}
+
+let pilhas = $('.pilha');
+let fioAmareloVerifica = 1;
+
+function FioAmarelo() {
+    if (fioAmarelo.cortarFio = false || senhaVerificada === false) { // Use === for comparison, not =
+        window.location.href = 'cutsceneFalha.html';
+        // Lógica adicional se necessário
+    } else if (fioAmarelo.cortarFio = false || senhaVerificada === true) {
+        fioAmareloVerifica = 2;
+        console.log(fioAmareloVerifica);
+    }
+}
+
+function verificarSenha() {
+    const senha = Array.from(numerosSelecionados).join('');
+    if (senha === senhaCorreta) {
+        window.senhaVerificada = true; // Define a senha como verificada globalmente
+        AbrirTampa();
+
+        const audio = document.getElementById('sound-effect-senha'); // assume you have an <audio> element with this id
+        audio.play();
+    } else {
+        subtractOneMinute(); // Chama a função para subtrair 1 minuto
+        TimerVermelho();
+        limparNumerosSelecionados(numerosSelecionados);
+        window.senhaVerificada = false; // Define a senha como não verificada globalmente
+        const audio = document.getElementById('sound-effect-erro'); // assume you have an <audio> element with this id
+        audio.play();
+    }
+}
+
 var cortarFio = false;
 
     // Quando o botão da tesoura é clicado
@@ -105,53 +141,48 @@ var cortarFio = false;
             
         } 
     });
+
+    $('#fioVermelho').click(function () {
+        if (cortarFio) {
+            $(this).hide(); // Esconde o fio clicado
+            FioVermelho(); // Redireciona para a página de falha
+            cortarFio = false; // Reseta o estado após cortar um fio
+        }
+    });
+
+    $('#fioAmarelo').click(function () {
+        if (cortarFio) {
+            $(this).hide(); // Esconde o fio clicado
+            FioAmarelo(); // Verifica se todas as pilhas foram removidas
+            cortarFio = false; // Reseta o estado após cortar um fio
+        }
+    });
+
+
 document.getElementById('apagar').addEventListener('click', function () {
     limparNumerosSelecionados(numerosSelecionados);
 })
 document.querySelectorAll('.key').forEach(key => {
-    key.addEventListener('click', function () {
+    key.addEventListener('click', function() {
         const numero = this.textContent;
-
-        // Verifica se o número já foi selecionado
         if (numerosSelecionados.has(numero)) {
-            // Se o número já foi selecionado, remove a seleção
-         //   numerosSelecionados.delete(numero);
             this.classList.remove('selected');
-        } 
-        else {
-            // Se o número não foi selecionado, adiciona à seleção
+            numerosSelecionados.delete(numero);
+        } else {
             if (numerosSelecionados.size < maxSelecionados) {
                 numerosSelecionados.add(numero);
                 this.classList.add('selected');
             }
         }
-        // Atualiza a senha se tivermos 4 números distintos
         if (numerosSelecionados.size === maxSelecionados) {
-            const senha = Array.from(numerosSelecionados).join('');
-            //  document.getElementById('senha').textContent = senha;
-
             atualizarDigitos();
-
-            // Verifica se a senha gerada é igual à senha correta
-            if (senha === senhaCorreta) {
-                alert('Senha correta! Acesso concedido.');
-                AbrirTampa();
-             //   
-            } else {
-
-                subtractOneMinute(); // Chama a função para subtrair 1 minuto
-                document.querySelectorAll('.key').forEach(k => k.classList.remove('selected'));
-                TimerVermelho();
-                limparNumerosSelecionados(numerosSelecionados);
-                console.log(numerosSelecionados);
-            }
-
+            verificarSenha(); // Verifica a senha quando 4 números distintos são selecionados
         } else {
-            //  document.getElementById('senha').textContent = `${Array.from(numerosSelecionados).join(', ')}`;
             atualizarDigitos();
         }
     });
 });
+
 
 // Inicializa o cronômetro 
  window.onload = function () {
@@ -160,3 +191,18 @@ document.querySelectorAll('.key').forEach(key => {
     startTimer(tenMinutes, display);
 }; 
 
+let vitoria = function () {
+    window.location.href = 'sucesso.html';
+};
+
+function playSound() {
+    const audio = document.getElementById('sound-effect'); // assume you have an <audio> element with this id
+    audio.play();
+  }
+  
+  document.querySelectorAll('.key').forEach(key => {
+    key.addEventListener('click', function() {
+      // your existing code here...
+      playSound(); // add this line to play the sound
+    });
+  });

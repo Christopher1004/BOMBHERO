@@ -12,6 +12,11 @@
 
     <div id="content"></div>
 
+    <audio id="sound-effect" src="../sounds/click.mp3"></audio>
+    <audio id="sound-effect-alarm" src="../sounds/alarm18s.mp3"></audio>
+    <audio id="sound-effect-senha" src="../sounds/senhaCorreta.mp3"></audio>
+    <audio id="sound-effect-erro" src="../sounds/erro.mp3"></audio>
+
     <div class="toolbar">
         <div class="tesoura">
             <button class="button" id="tesoura"><img class="img" src="../icons/tesouras.png" alt=""></button>
@@ -70,7 +75,7 @@
 
                 <div class="tampa"></div>
 
-                <div class="compartimentoEnergia">
+                <div class="compartimentoEnergia" id="energia">
                     <div class="pilha" id="pilha1"><img src="../img/pilha.png" alt=""></div>
                     <div class="pilha" id="pilha2"><img src="../img/pilha.png" alt=""></div>
                     <div class="pilha" id="pilha3"><img src="../img/pilha.png" alt=""></div>
@@ -88,8 +93,13 @@
     </div>
     <img src="../icons/tesouras.png" id="cursorMouse" alt="">
 
+    <audio id="background-audio" src="../content/focoNaBomba_edit2.mp3" loop></audio>
 
+    <script>
+        const audio = new Audio('../content/focoNaBomba_edit2.mp3');
 
+        audio.play();
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/digitos.js"></script>
     <script src="../js/botoesLaterais.js"></script>

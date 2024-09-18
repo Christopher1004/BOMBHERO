@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha sua função</title>
     <link rel="stylesheet" href="../style/Operadores.css">
-    <script src="../js/scriptOperadores.js"></script>
 </head>
 <body>
     <div class="container">
@@ -14,7 +13,7 @@
             </div>
             <div id="imagem-inteligencia" class="imagem" style="display: none;"></div>
         </div>
-    
+        
         <div class="direita">
             <div id="detalhes-operador">
                 <div class="titulo">
@@ -38,10 +37,12 @@
         <div class="subBarra">
             <div id="btn-inteligencia" class="Inteligencia" onclick="mostrarInteligencia()">Inteligência</div>
             <div id="btn-operador" class="Operador" onclick="mostrarOperador()">Operador</div>
-            <div class="começar" onclick="location.href='nomeEquipe.html'">Começar</div>
+            <div class="começar" id="comecar">Começar</div>
         </div>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/scriptOperadores.js"></script>
     
 </body>
 </html>

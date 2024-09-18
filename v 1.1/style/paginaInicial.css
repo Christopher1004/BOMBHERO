@@ -43,7 +43,7 @@ body {
     font-size: 20px;
     padding: 1px 30px; /* Padding ajustado para mais simetria */
     cursor: pointer;
-    border: 1px solid black; /* Adicionado borda preta */
+    border: none;
     display: flex;
     align-items: center; /* Centraliza verticalmente o conteúdo */
     justify-content: space-between; /* Adiciona espaço entre o texto e a seta */
@@ -52,4 +52,9 @@ body {
 .começar::after {
     content: ">";
     margin-left: 100px;
+}
+
+.começar:hover {
+    background-color: #31dd95;
+    transition: 500ms linear;
 }

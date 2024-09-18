@@ -24,4 +24,26 @@ $(document).ready(function () {
             console.log('Tesoura não ativada!');
         }
     });
+    let pilhas = $('.pilha'); // Seleciona todos os elementos com a classe 'pilha'
+    
+    $('#energia').click(function() {
+
+            if (fioAmareloVerifica == 2) {
+
+                if (pilhas.length !== 0) {
+                    // Remove a última pilha da lista
+                    $(pilhas[pilhas.length - 1]).remove();
+                    // Atualiza a lista de pilhas
+                    pilhas = $('.pilha');
+                    if (pilhas.length == 0) {
+                        vitoria();
+                    }
+
+                }
+            } else if (fioAmareloVerifica == 1) {
+                console.log("nao");
+                window.location.href = 'cutsceneFalha.html';
+            }
+    });
+
 });

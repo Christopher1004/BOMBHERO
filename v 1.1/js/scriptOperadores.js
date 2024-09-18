@@ -1,33 +1,39 @@
+let currentPage = 'operador';
+
 function mostrarInteligencia() {
     // Esconde o conteúdo de Operador e mostra o de Inteligência
-    document.getElementById('detalhes-operador').style.display = 'none';
-    document.getElementById('imagem-operador').style.display = 'none';
+    $('#detalhes-operador').hide();
+    $('#imagem-operador').hide();
     
-    document.getElementById('detalhes-inteligencia').style.display = 'block';
-    document.getElementById('imagem-inteligencia').style.display = 'block';
+    $('#detalhes-inteligencia').show();
+    $('#imagem-inteligencia').show();
     
     // Muda a cor de fundo dos botões
-    document.getElementById('btn-inteligencia').style.backgroundColor = 'white';
-    document.getElementById('btn-inteligencia').style.color = 'black';
-
-    document.getElementById('btn-operador').style.backgroundColor = 'black';
-    document.getElementById('btn-operador').style.color = 'white';
+    $('#btn-inteligencia').css({'background-color': 'white', 'color': 'black'});
+    $('#btn-operador').css({'background-color': 'black', 'color': 'white'});
+    
+    currentPage = 'inteligencia';
 }
 
 function mostrarOperador() {
     // Esconde o conteúdo de Inteligência e mostra o de Operador
-    document.getElementById('detalhes-inteligencia').style.display = 'none';
-    document.getElementById('imagem-inteligencia').style.display = 'none';
+    $('#detalhes-inteligencia').hide();
+    $('#imagem-inteligencia').hide();
     
-    document.getElementById('detalhes-operador').style.display = 'block';
-    document.getElementById('imagem-operador').style.display = 'block';
+    $('#detalhes-operador').show();
+    $('#imagem-operador').show();
     
     // Muda a cor de fundo dos botões
-    document.getElementById('btn-operador').style.backgroundColor = 'white';
-    document.getElementById('btn-operador').style.color = 'black';
-
-    document.getElementById('btn-inteligencia').style.backgroundColor = 'black';
-    document.getElementById('btn-inteligencia').style.color = 'white';
+    $('#btn-operador').css({'background-color': 'white', 'color': 'black'});
+    $('#btn-inteligencia').css({'background-color': 'black', 'color': 'white'});
+    
+    currentPage = 'operador';
 }
 
-
+$('#comecar').click( function() {
+    if (currentPage === 'inteligencia') {
+        location.href = 'inteligencia.html';
+    } else {
+        location.href = 'cutscene.html';
+    }
+});
