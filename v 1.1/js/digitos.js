@@ -25,9 +25,9 @@ function startTimer(duration, display) {
         if (display.textContent <= "01:00") {
             document.querySelector("#Timer").classList.add('Erro2');
         }
-        else(
-            document.querySelector("#Timer").classList.remove('Erro2')
-        )
+        else{
+            document.querySelector("#Timer").classList.remove('Erro2');
+        }
         if (display.textContent <= "00:15") {
             document.querySelector(".gameArea").classList.add('Tremedeira');
         }
@@ -169,7 +169,7 @@ document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('click', function() {
         const numero = this.textContent;
         if (numerosSelecionados.has(numero)) {
-           this.classList.remove('selected');
+            this.classList.remove('selected');
             numerosSelecionados.delete(numero);
         } else {
             if (numerosSelecionados.size < maxSelecionados) {
